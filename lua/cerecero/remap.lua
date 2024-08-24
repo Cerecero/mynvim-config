@@ -17,3 +17,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Replace all the works equal to the one on the cursor --
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Wirte buffer
+vim.keymap.set("n", "<leader>w", vim.cmd.write)
+-- Quit buffer
+vim.keymap.set("n", "<leader>q", vim.cmd.quit)
+--This will quit the buffer, but it will fail when changes have been made to the buffer or previous buffers
