@@ -20,5 +20,9 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- Wirte buffer
 vim.keymap.set("n", "<leader>w", vim.cmd.write)
 -- Quit buffer
-vim.keymap.set("n", "<leader>q", vim.cmd.quit)
---This will quit the buffer, but it will fail when changes have been made to the buffer or previous buffers
+vim.keymap.set("n", "<leader>q", vim.cmd.quit) --This will quit the buffer, but it will fail when changes have been made to the buffer or previous buffers
+
+-- Yank content to system clipboard
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y")
