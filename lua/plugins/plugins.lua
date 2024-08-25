@@ -75,7 +75,11 @@ return {
     },
     { -- Arrow --
     "otavioschwanck/arrow.nvim",
-    },{
+    },
+    { -- minifiles--
     "echasnovski/mini.files", version = '*'
+    }, --vim-visual-multi
+    {
+    "mg979/vim-visual-multi",
     },
 }
