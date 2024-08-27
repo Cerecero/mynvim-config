@@ -1,11 +1,11 @@
 require("cerecero")
 require("mason").setup()
-vim.opt.number = true -- Enable line numbers
+vim.opt.number = true         -- Enable line numbers
 vim.opt.relativenumber = true -- Enable relative line numbers
-vim.opt.autoindent = true -- Enable autoindent
-vim.opt.tabstop = 4 -- Number of spaces a tab represents
-vim.opt.shiftwidth = 4 -- Number of spaces for each indentation
-vim.opt.softtabstop =4
+vim.opt.autoindent = true     -- Enable autoindent
+vim.opt.tabstop = 4           -- Number of spaces a tab represents
+vim.opt.shiftwidth = 4        -- Number of spaces for each indentation
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -27,27 +27,4 @@ vim.opt.undofile = true
 
 vim.api.nvim_set_option("clipboard", "unnamed")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+vim.opt.guicursor = "n-ci:block,i:ver3"
