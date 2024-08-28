@@ -53,7 +53,9 @@ return {
     { 'hrsh7th/nvim-cmp'
     }, -- Mason --
     {
-        "williamboman/mason.nvim"
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
     },
     { -- Dashboard --
         'nvimdev/dashboard-nvim',
@@ -88,5 +90,14 @@ return {
     {
         "alexghergh/nvim-tmux-navigation",
         lazy = false,
-    }
+    }, -- nviom-cmp
+    {
+        "hrsh7th/nvim-cmp",
+    },-- cmp-nvim-lsp
+    {
+        "sar/cmp-lsp.nvim",
+    },-- conform
+    {
+        "stevearc/conform.nvim",
+    },
 }
