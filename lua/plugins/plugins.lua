@@ -93,11 +93,20 @@ return {
     }, -- nviom-cmp
     {
         "hrsh7th/nvim-cmp",
-    },-- cmp-nvim-lsp
+    }, -- cmp-nvim-lsp
     {
         "sar/cmp-lsp.nvim",
-    },-- conform
+    }, -- conform
     {
         "stevearc/conform.nvim",
-    },
+    }, -- mini.pairs
+    {
+        'echasnovski/mini.pairs', version = '*'
+    }, --Comment.nvim
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        }
+    }
 }
