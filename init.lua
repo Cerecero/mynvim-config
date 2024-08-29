@@ -27,4 +27,9 @@ vim.opt.undofile = true
 
 vim.api.nvim_set_option("clipboard", "unnamed")
 
-vim.opt.guicursor = "n-ci:block,i:ver3"
+vim.opt.guicursor = "n-ci:block,i:ver3" 
+
+-- Set relative line number as orange (do this after loading theme)
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "gray" })
+vim.api.nvim_set_hl(0, "LineNr", { fg = "white" })
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "grey" })

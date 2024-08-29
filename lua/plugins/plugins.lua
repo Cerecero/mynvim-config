@@ -108,5 +108,26 @@ return {
         opts = {
             -- add any options here
         }
-    }
+    }, --nvim surround
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+    },
 }
+-- avante.nvim
+-- {
+--     "yetone/avante.nvim",
+--     dependencies = {
+--         "stevearc/dressing.nvim",
+--         "nvim-lua/plenary.nvim",
+--         "MunifTanjim/nui.nvim",
+--     },
+-- },
+-- {-- render-markdown
+--   'MeanderingProgrammer/render-markdown.nvim',
+--   opts = {
+--     file_types = { "markdown", "Avante" },
+--   },
+--   ft = { "markdown", "Avante" },
+-- },
