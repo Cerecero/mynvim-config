@@ -33,5 +33,5 @@ require("lazy").setup({
   -- automatically check for plugin updates
   --install = { colorscheme = { "bluloco" } },
   
-  checker = { enabled = true },
+  checker = { enabled = false },
 })

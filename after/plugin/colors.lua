@@ -9,7 +9,6 @@
 
 --ColorTheme()
 
-
 require('onedark').setup {
     style = 'cool',
 }

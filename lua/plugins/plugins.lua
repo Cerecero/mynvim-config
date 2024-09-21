@@ -23,16 +23,6 @@ return {
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    -- Theme --
-    {
-        'uloco/bluloco.nvim',
-        lazy = false,
-        priority = 0,
-        dependencies = { 'rktjmp/lush.nvim' },
-        config = function()
-            -- your optional config goes here, see below.
-        end,
-    },
     { -- Theme 2 --
         'navarasu/onedark.nvim',
         lazy = false,
@@ -113,21 +103,60 @@ return {
         "kylechui/nvim-surround",
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
+    },                 --nvim-dap
+    {
+        "mfussenegger/nvim-dap",
+        dependencies = {
+            {
+                "rcarriga/nvim-dap-ui"
+            },
+            "nvim-neotest/nvim-nio",
+            "theHamsta/nvim-dap-virtual-text",
+        }
+    }, --debugpy
+    {
+        "HiPhish/debugpy.nvim",
+    }, --nvim-dap-python
+    {
+        "mfussenegger/nvim-dap-python",
+    }, -- avante.nvim
+    {
+        "yetone/avante.nvim",
+        lazy = false,
+        version = false,
+        build = "make",
+        dependencies = {
+            "stevearc/dressing.nvim",
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+        },
+    },
+    { -- render-markdown
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+            file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
+
+    },-- nvim-telekasten
+    {
+       "nvim-telekasten/telekasten.nvim",
+    }, -- nvim focus
+    { 
+        'nvim-focus/focus.nvim', 
+        version = false 
+    }, -- lush.nvim theme creator
+    {
+        "rktjmp/lush.nvim",
+    }, -- incline.nvim
+    {
+        "b0o/incline.nvim",
     },
 }
--- avante.nvim
+
+
+-- Unused plugins
+-- shipwright
 -- {
---     "yetone/avante.nvim",
---     dependencies = {
---         "stevearc/dressing.nvim",
---         "nvim-lua/plenary.nvim",
---         "MunifTanjim/nui.nvim",
---     },
--- },
--- {-- render-markdown
---   'MeanderingProgrammer/render-markdown.nvim',
---   opts = {
---     file_types = { "markdown", "Avante" },
---   },
---   ft = { "markdown", "Avante" },
--- },
+--     "rktjmp/shipwright.nvim",
+-- }, --lush
