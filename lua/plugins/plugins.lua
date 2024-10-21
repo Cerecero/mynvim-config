@@ -35,9 +35,10 @@ return {
     {  -- undotree --
         "https://github.com/mbbill/undotree"
     }, -- vim-fugitive--
-    {  -- lsp-zero ---
+    {
         "https://github.com/tpope/vim-fugitive"
-    }, { 'VonHeikemen/lsp-zero.nvim', branch = 'v4.x' },
+    },-- lsp-zero -- 
+    { 'VonHeikemen/lsp-zero.nvim', branch = 'v4.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/nvim-cmp'
@@ -80,7 +81,7 @@ return {
     {
         "alexghergh/nvim-tmux-navigation",
         lazy = false,
-    }, -- nviom-cmp
+    }, -- nvim-cmp
     {
         "hrsh7th/nvim-cmp",
     }, -- cmp-nvim-lsp
@@ -119,26 +120,8 @@ return {
     }, --nvim-dap-python
     {
         "mfussenegger/nvim-dap-python",
-    }, -- avante.nvim
-    {
-        "yetone/avante.nvim",
-        lazy = false,
-        version = false,
-        build = "make",
-        dependencies = {
-            "stevearc/dressing.nvim",
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-        },
     },
-    { -- render-markdown
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {
-            file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
-
-    }, -- nvim-telekasten
+    -- nvim-telekasten
     {
         "nvim-telekasten/telekasten.nvim",
     }, -- nvim focus
@@ -174,4 +157,23 @@ return {
 -- shipwright
 -- {
 --     "rktjmp/shipwright.nvim",
--- }, --lush
+    -- {
+    --     "yetone/avante.nvim",
+    --     lazy = false,
+    --     version = false,
+    --     build = "make",
+    --     dependencies = {
+    --     "stevearc/dressing.nvim",
+    --         "nvim-lua/plenary.nvim",
+    --         "MunifTanjim/nui.nvim",
+    --     },
+    -- },
+--     { -- render-markdown
+--         'MeanderingProgrammer/render-markdown.nvim',
+--         opts = {
+--             file_types = { "markdown", "Avante" },
+--         },
+--         ft = { "markdown", "Avante" },
+--
+--     },
+-- -- }, --lush

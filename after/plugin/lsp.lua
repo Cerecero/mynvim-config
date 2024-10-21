@@ -47,6 +47,13 @@ local lsp_attach = function(client, bufnr)
     vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts, {desc= 'Renames all references for this symbol'})
     vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts, {desc= 'Formats code'})
     vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts, {desc= 'Selects a code action available'})
+
+    vim.keymap.set('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts, {desc='Jumps to the next diagnostic'})
+    vim.keymap.set('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts, {desc='Jumps to the previous diagnostic'})
+    vim.keymap.set('n', '<leader>df', '<cmd>lua vim.diagnostic.open_float()<CR>', opts, {desc='Opens a floating windows for this diagnostic'})
+
+    vim.keymap.set('n', '<leader>dd', '<cmd>lua vim.diagnostic.enable(false)<CR>',opts, {desc='Disable diagnostics'})
+    vim.keymap.set('n', '<leader>de', '<cmd>lua vim.diagnostic.enable(true)<CR>',opts, {desc='Enable diagnostics'})
 end
 
 lsp_zero.extend_lspconfig({

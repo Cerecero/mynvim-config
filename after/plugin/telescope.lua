@@ -10,3 +10,5 @@ end, {desc = 'Project Search'})
 vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {desc = 'Document Symbols'})
 vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {desc = 'Workspace Symbols'})
 -- vim.keymap.set('n', '<leader>fs', builtin.git_status(), {desc = 'Git Status'})
+--
+require("telescope").load_extension("noice")

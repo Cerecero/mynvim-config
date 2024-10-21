@@ -1,2 +1,1 @@
-require('dashboard').setup {
-}
+require('dashboard').setup {}

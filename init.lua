@@ -38,3 +38,8 @@ vim.api.nvim_set_hl(0, "LineNr", { fg = "#e06c75" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#6272a4" })
 
 -- vim.opt.winbar = "%= %#PmenuSel# %t " status line
+
+vim.opt.splitbelow = true -- opens a horizontal split below insted of above
+vim.opt.splitright = true -- opens a vertical split on the right side instead of left side
+
+vim.opt.ignorecase = true -- ignore the caps on commands
