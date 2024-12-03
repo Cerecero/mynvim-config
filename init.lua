@@ -43,3 +43,29 @@ vim.opt.splitbelow = true -- opens a horizontal split below insted of above
 vim.opt.splitright = true -- opens a vertical split on the right side instead of left side
 
 vim.opt.ignorecase = true -- ignore the caps on commands
+-- Ignore this themes when picking from colorscheme command
+vim.opt.wildignore:append({
+    "blue.vim",
+    "darkblue.vim",
+    "delek.vim",
+    "elflord.vim",
+    "evening.vim",
+    "industry.vim",
+    "koehler.vim",
+    "morning.vim",
+    "desert.vim",
+    "murphy.vim",
+    "pablo.vim",
+    "peachpuff.vim",
+    "quiet.vim",
+    "ron.vim",
+    "shine.vim",
+    "slate.vim",
+    "sorbet.vim",
+    "torte.vim",
+    "vim.vim",
+    "wildcharm.vim",
+    "zaibatsu.vim",
+    "zellner.vim",
+    "vim.vim",
+}, ",")
