@@ -56,7 +56,7 @@ vim.api.nvim_create_autocmd("Filetype", {
 -- END ---
 
 
--- Terminal Section --
+                            -- Terminal Section --
 vim.api.nvim_create_autocmd('TermOpen', {
     group = vim.api.nvim_create_augroup('custom-term-open', {clear = true}),
     callback = function()
@@ -64,27 +64,41 @@ vim.api.nvim_create_autocmd('TermOpen', {
         vim.opt.relativenumber = false
     end,
 })
-local job_id = 0
-vim.keymap.set("n", "<leader>st", function()
-    vim.cmd.vnew()
-    vim.cmd.term()
-    vim.cmd.wincmd("J")
-    vim.api.nvim_win_set_height(0, 15)
+
+                        -- Exit Terminal Mode
+vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode"})
+
+local function Term()
+  local terminal_buffer_number = vim.fn.bufnr("term://")
+  local terminal_window_number = vim.fn.bufwinnr("term://")
+  local window_count = vim.fn.winnr("$")
+
+  if terminal_window_number > 0 and window_count > 1 then
+    vim.fn.execute(terminal_window_number .. "wincmd c")
+  elseif terminal_buffer_number > 0 and terminal_buffer_number ~= vim.fn.bufnr("%") then
+    vim.fn.execute("sb " .. terminal_buffer_number)  
+  elseif terminal_buffer_number == vim.fn.bufnr("%") then
+    vim.fn.execute("bprevious | sb " .. terminal_buffer_number .. " | wincmd p")
+  else
+    vim.fn.execute("sp term://zsh")
     vim.cmd("startinsert")
+  end
+end
 
-    job_id = vim.bo.channel
-end)
+vim.api.nvim_create_user_command("Term", Term, {
+  desc = "Open terminal window",
+})
 
+vim.keymap.set("n", "<leader><space>", vim.cmd.Term, { noremap = true, silent = true })
+
+-- Keymap to run go run ./cmd/web in go files
 vim.api.nvim_create_autocmd("Filetype", {
     pattern = "go",
     callback = function()
-        -- Keymap to run go run ./cmd/web
         vim.keymap.set("n", "<leader>gor", function() 
             vim.fn.chansend(job_id, { "go run ./cmd/web \r\n" })
         end)
     end
 })
 
-vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode"})
-
--- End of Terminal Section --
+                         -- End of Terminal Section --

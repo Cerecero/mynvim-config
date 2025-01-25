@@ -1,11 +1,14 @@
 -- Telescope --
--- require('telescope').setup{
---     defaults = {
---         vimgrep_arguments = {
---             '--hidden',
---         }
---     }
--- }
+require('telescope').setup{
+    -- pickers = {
+    --     find_files = {
+    --         theme = "dropdown"
+    --     }
+    -- }
+    extensions = {
+        fzf = {}
+    }
+}
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc ='Project Files'})
@@ -17,12 +20,16 @@ vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, {desc = 'Documen
 vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, {desc = 'Workspace Symbols'})
 vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {desc = 'Goto References'})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {desc = 'Find Files'})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find Help Tags'})
+
 
 vim.keymap.set('n', '<leader>cf', function ()
-    builtin.find_files {
-        cwd = vim.fn.stdpath("config")
-    }
+    local opts = require('telescope.themes').get_ivy({
+            cwd = vim.fn.stdpath("config")
+    })
+    builtin.find_files(opts)
 end, { desc = 'Nvim Config Files'})
+
 
 -- vim.keymap.set('n', '<leader>fs', builtin.git_status(), {desc = 'Git Status'})
 --
