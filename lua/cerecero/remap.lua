@@ -14,7 +14,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- Preserve the yanked content --
 --vim.keymap.set("n", "<C-d>", "<C>zz")
--- Replace all the works equal to the one on the cursor --
+-- Replace all the words equal to the one on the cursor --
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = 'Replace all words == cursor'})
 
 -- Wirte buffer
@@ -46,6 +46,7 @@ local function insert_err_go()
     }
     vim.api.nvim_put(lines, "l", true, true)
 end
+-- Keymap to insert err boilerplate, in go files
 vim.api.nvim_create_autocmd("Filetype", {
     pattern = "go",
     callback = function()
@@ -55,7 +56,7 @@ vim.api.nvim_create_autocmd("Filetype", {
 -- END ---
 
 
--- Terminal --
+-- Terminal Section --
 vim.api.nvim_create_autocmd('TermOpen', {
     group = vim.api.nvim_create_augroup('custom-term-open', {clear = true}),
     callback = function()
@@ -74,9 +75,16 @@ vim.keymap.set("n", "<leader>st", function()
     job_id = vim.bo.channel
 end)
 
-vim.keymap.set("n", "<leader>gor", function()
-    vim.fn.chansend(job_id, { "go run ./cmd/web \r\n" })
-end)
+vim.api.nvim_create_autocmd("Filetype", {
+    pattern = "go",
+    callback = function()
+        -- Keymap to run go run ./cmd/web
+        vim.keymap.set("n", "<leader>gor", function() 
+            vim.fn.chansend(job_id, { "go run ./cmd/web \r\n" })
+        end)
+    end
+})
 
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode"})
 
+-- End of Terminal Section --
