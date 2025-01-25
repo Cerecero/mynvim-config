@@ -10,6 +10,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local servers = {
     clangd = {},
+    gopls = {},
     pyLsp = {},
     jedi_language_server = {},
     lua_ls = {

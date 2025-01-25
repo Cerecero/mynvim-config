@@ -1,15 +1,15 @@
 -- Color Theme --
---function ColorTheme(color)
---		color = color or "onedark" --"nord"
---		vim.cmd.colorscheme(color)
---
---      vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
---      vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
---end
+function ColorTheme(color)
+	color = color or "moonlight" --"nord"
+	vim.cmd.colorscheme(color)
 
---ColorTheme()
+     -- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+     -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+end
 
-require('onedark').setup {
-    style = 'cool',
-}
-require('onedark').load()
+ColorTheme()
+
+-- require('onedark').setup {
+    -- style = 'cool',
+-- }
+-- require('moonlight').load()
