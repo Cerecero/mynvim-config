@@ -46,6 +46,7 @@ local function insert_err_go()
     }
     vim.api.nvim_put(lines, "l", true, true)
 end
+
 -- Keymap to insert err boilerplate, in go files
 vim.api.nvim_create_autocmd("Filetype", {
     pattern = "go",
@@ -53,8 +54,6 @@ vim.api.nvim_create_autocmd("Filetype", {
         vim.keymap.set("i", "eRR", insert_err_go)
     end
 })
--- END ---
-
 
                             -- Terminal Section --
 vim.api.nvim_create_autocmd('TermOpen', {
@@ -65,9 +64,9 @@ vim.api.nvim_create_autocmd('TermOpen', {
     end,
 })
 
-                        -- Exit Terminal Mode
+-- Exit Terminal Mode
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit Terminal Mode"})
-
+local job_id = 0
 local function Term()
   local terminal_buffer_number = vim.fn.bufnr("term://")
   local terminal_window_number = vim.fn.bufwinnr("term://")
@@ -82,9 +81,9 @@ local function Term()
   else
     vim.fn.execute("sp term://zsh")
     vim.cmd("startinsert")
+        job_id = vim.bo.channel
   end
 end
-
 vim.api.nvim_create_user_command("Term", Term, {
   desc = "Open terminal window",
 })
@@ -102,3 +101,4 @@ vim.api.nvim_create_autocmd("Filetype", {
 })
 
                          -- End of Terminal Section --
+

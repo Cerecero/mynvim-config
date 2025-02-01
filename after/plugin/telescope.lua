@@ -6,12 +6,16 @@ require('telescope').setup{
     --     }
     -- }
     extensions = {
-        fzf = {}
+        fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case",
+        }
     }
 }
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>pf', builtin.find_files, {desc ='Project Files'})
 vim.keymap.set('n', '<C-p>', builtin.git_files, {desc= 'Git files'})
 vim.keymap.set('n', '<leader>ps', function()
 		builtin.grep_string({ search = vim.fn.input("Grep > ") })
@@ -34,3 +38,4 @@ end, { desc = 'Nvim Config Files'})
 -- vim.keymap.set('n', '<leader>fs', builtin.git_status(), {desc = 'Git Status'})
 --
 -- require("telescope").load_extension("noice")
+require("telescope").load_extension("fzf")
