@@ -38,7 +38,7 @@ return {
     }, -- vim-fugitive--
     {
         "https://github.com/tpope/vim-fugitive"
-    },-- lsp-zero -- 
+    }, -- lsp-zero --
     { 'VonHeikemen/lsp-zero.nvim', branch = 'v4.x' },
     { 'neovim/nvim-lspconfig' },
     { 'hrsh7th/cmp-nvim-lsp' },
@@ -68,14 +68,13 @@ return {
     },
     {  -- minifiles--
         "echasnovski/mini.files", version = '*'
-    },  -- mini.pairs
+    }, -- mini.pairs
     {
         'echasnovski/mini.pairs', version = '*'
-    },  -- mini.indents
+    }, -- mini.indents
     {
-        'echasnovski/mini.indentscope', version = false 
-    },
-    --vim-visual-multi
+        'echasnovski/mini.indentscope', version = false
+    }, --vim-visual-multi
     {
         "mg979/vim-visual-multi",
     }, -- Tmux Navigation --
@@ -140,17 +139,17 @@ return {
 -- shipwright
 -- {
 --     "rktjmp/shipwright.nvim",
-    -- {
-    --     "yetone/avante.nvim",
-    --     lazy = false,
-    --     version = false,
-    --     build = "make",
-    --     dependencies = {
-    --     "stevearc/dressing.nvim",
-    --         "nvim-lua/plenary.nvim",
-    --         "MunifTanjim/nui.nvim",
-    --     },
-    -- },
+-- {
+--     "yetone/avante.nvim",
+--     lazy = false,
+--     version = false,
+--     build = "make",
+--     dependencies = {
+--     "stevearc/dressing.nvim",
+--         "nvim-lua/plenary.nvim",
+--         "MunifTanjim/nui.nvim",
+--     },
+-- },
 --     { -- render-markdown
 --         'MeanderingProgrammer/render-markdown.nvim',
 --         opts = {
