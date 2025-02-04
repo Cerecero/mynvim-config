@@ -1,5 +1,15 @@
 -- Telescope --
 require('telescope').setup {
+    preview = {
+        -- Remove notification for .tmpl files
+        filetype_hook = function (filepath, bufnr)
+            if filepath:match("%.tmpl$") then
+                vim.api.nvim_buf_set_option(bufnr, "syntax", "off")
+                return false
+            end
+            return true
+        end,
+    },
     -- pickers = {
     --     find_files = {
     --         theme = "dropdown"
