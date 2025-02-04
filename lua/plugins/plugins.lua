@@ -68,7 +68,14 @@ return {
     },
     {  -- minifiles--
         "echasnovski/mini.files", version = '*'
-    }, --vim-visual-multi
+    },  -- mini.pairs
+    {
+        'echasnovski/mini.pairs', version = '*'
+    },  -- mini.indents
+    {
+        'echasnovski/mini.indentscope', version = false 
+    },
+    --vim-visual-multi
     {
         "mg979/vim-visual-multi",
     }, -- Tmux Navigation --
@@ -84,9 +91,6 @@ return {
     }, -- conform
     {
         "stevearc/conform.nvim",
-    }, -- mini.pairs
-    {
-        'echasnovski/mini.pairs', version = '*'
     }, --Comment.nvim
     {
         'numToStr/Comment.nvim',
@@ -128,7 +132,7 @@ return {
     }, -- incline.nvim
     {
         "b0o/incline.nvim",
-    }, -- lazy.nvim
+    },
 }
 
 
