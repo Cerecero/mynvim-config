@@ -1,20 +1,10 @@
 -- Telescope --
 require('telescope').setup {
-    preview = {
-        -- Remove notification for .tmpl files
-        filetype_hook = function (filepath, bufnr)
-            if filepath:match("%.tmpl$") then
-                vim.api.nvim_buf_set_option(bufnr, "syntax", "off")
-                return false
-            end
-            return true
-        end,
+    defaults = {
+        file_ignore_patterns = {
+            -- ".tmpl",
+        }
     },
-    -- pickers = {
-    --     find_files = {
-    --         theme = "dropdown"
-    --     }
-    -- }
     extensions = {
         fzf = {
             fuzzy = true,
@@ -59,7 +49,6 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 -- vim.keymap.set('n', '<leader>fs', builtin.git_status(), {desc = 'Git Status'})
 --
 -- require("telescope").load_extension("noice")
-require("telescope").load_extension("fzf")
 
 -- Custom Messages
 -- Function to capture the output of :messages
@@ -119,16 +108,6 @@ local function get_messages()
 end
 
 vim.api.nvim_create_user_command("TelescopeMessages", get_messages, {})
-
 vim.keymap.set("n", "<leader>nn", get_messages, { desc = "Messages in Telescope" })
 
-vim.filetype.add({
-    extension = {
-        gotmpl = 'gotmpl',
-    },
-    pattern = {
-        [".*/templates/.*%.tpl"] = "helm",
-        [".*/templates/.*%.ya?ml"] = "helm",
-        ["helmfile.*%.ya?ml"] = "helm",
-    },
-})
+require("telescope").load_extension("fzf")

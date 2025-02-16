@@ -1,7 +1,7 @@
 require("nvim-surround").setup({
 
 })
-
+-- The three "core" operations of add/delete/change can be done with the keymaps ys{motion}{char}, ds{char}, and cs{target}{replacement}, respectively.
 --    Old text                    Command         New text
 --------------------------------------------------------------------------------
     -- surr*ound_words             ysiw)           (surround_words)
