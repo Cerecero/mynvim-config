@@ -1,6 +1,6 @@
 require("arrow").setup({
     show_icons = true,
-    leader_key = ";",
+    leader_key = "<leader>;",
     buffer_leader_key = "m",
     always_show_path = true,
     separate_by_branch = true,

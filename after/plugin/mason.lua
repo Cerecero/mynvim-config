@@ -13,6 +13,9 @@ local servers = {
         gopls = {},
         pyLsp = {},
         jedi_language_server = {},
+        hydra_lsp = {
+            filetypes = { "yaml", "yml" },
+        },
         lua_ls = {
             -- cmd = {...},
             -- filetypes = { ...},

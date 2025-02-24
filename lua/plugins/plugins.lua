@@ -24,10 +24,22 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
     },
-    { -- Theme 2 --
+    { -- Themes --
         'navarasu/onedark.nvim',
         lazy = false,
         priority = 1000,
+    },
+    {
+        "ashen-org/ashen.nvim",
+        -- optional but recommended,
+        -- pin to the latest stable release:
+        tag = "*",
+        lazy = false,
+        priority = 1000,
+        -- configuration is optional!
+        opts = {
+            -- your settings here
+        },
     },
     {
         'shaunsingh/moonlight.nvim',
@@ -53,18 +65,12 @@ return {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
+    { -- minifiles--
+        "echasnovski/mini.nvim", version = false
+    },
     { -- Arrow --
         "otavioschwanck/arrow.nvim",
     },
-    {  -- minifiles--
-        "echasnovski/mini.files", version = '*'
-    }, -- mini.pairs
-    {
-        'echasnovski/mini.pairs', version = '*'
-    }, -- mini.indents
-    {
-        'echasnovski/mini.indentscope', version = false
-    }, --vim-visual-multi
     {
         "mg979/vim-visual-multi",
     }, -- Tmux Navigation --
@@ -122,6 +128,31 @@ return {
     {
         "b0o/incline.nvim",
     },
+    { -- flash.nvim
+        "folke/flash.nvim",
+        event = "VeryLazy",
+    },
+    {
+        "kdheepak/lazygit.nvim",
+        lazy = true,
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        -- setting the keybinding for LazyGit with 'keys' is recommended in
+        -- order to load the plugin when the command is run for the first time
+        keys = {
+            { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+        }
+    },
+
 }
 
 
