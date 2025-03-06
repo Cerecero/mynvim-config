@@ -90,16 +90,6 @@ vim.api.nvim_create_user_command("Term", Term, {
 
 vim.keymap.set("n", "<leader><space>", vim.cmd.Term, { noremap = true, silent = true })
 
--- Keymap to run go run ./cmd/web in go files
-vim.api.nvim_create_autocmd("Filetype", {
-    pattern = "go",
-    callback = function()
-        vim.keymap.set("n", "<leader>gor", function() 
-            vim.fn.chansend(job_id, { "go run ./cmd/web \r\n" })
-        end)
-    end
-})
-
                          -- End of Terminal Section --
 
 -- Disable arrow keys in normal mode
@@ -107,3 +97,10 @@ vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
+-- Remap visual mode block wise to <C-b>
+vim.api.nvim_set_keymap('n', '<C-b>', '<C-v>', { noremap = true, silent = true })
+
+-- Insert line above or below without entering to insert mode
+vim.keymap.set('n', '<leader>o', 'o<Esc>')
+vim.keymap.set('n', '<leader>O', 'O<Esc>')
